@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airikai - Sacred Warrior Training</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700;800;900&family=Barlow:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Saira:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        /* TYPOGRAPHY SYSTEM */
+        :root {
+            /* Font Families */
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+            --font-alt: 'Rajdhani', sans-serif;
+            
+            /* Font Sizes - Golden Ratio Scale */
+            --fs-hero: clamp(4rem, 10vw, 8rem);
+            --fs-display: clamp(3rem, 7vw, 5rem);
+            --fs-h1: clamp(2.5rem, 5vw, 4rem);
+            --fs-h2: clamp(2rem, 4vw, 3rem);
+            --fs-h3: clamp(1.5rem, 3vw, 2.25rem);
+            --fs-h4: clamp(1.25rem, 2.5vw, 1.75rem);
+            --fs-h5: clamp(1.125rem, 2vw, 1.5rem);
+            --fs-body-lg: 1.5rem;
+            --fs-body: 1.25rem;
+            --fs-body-sm: 1.125rem;
+            
+            /* Letter Spacing */
+            --ls-tight: -0.02em;
+            --ls-normal: 0;
+            --ls-wide: 0.05em;
+            --ls-wider: 0.1em;
+            --ls-widest: 0.2em;
+            --ls-ultra: 0.3em;
+            
+            /* Line Heights */
+            --lh-tight: 0.9;
+            --lh-heading: 1.1;
+            --lh-normal: 1.4;
+            --lh-relaxed: 1.6;
+            --lh-loose: 1.8;
+        }
+        
+        /* Global Typography Reset */
+        body {
+            font-family: var(--font-body);
+            font-size: var(--fs-body);
+            font-weight: 600;
+            line-height: var(--lh-normal);
+            letter-spacing: var(--ls-normal);
+            font-feature-settings: "kern" 1;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Display Typography */
+        h1, h2, h3, h4, h5, h6,
+        .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: var(--lh-heading);
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wider);
+            margin-bottom: 1.5rem;
+        }
+        
+        h1, .display-1 { 
+            font-size: var(--fs-h1);
+            letter-spacing: var(--ls-widest);
+        }
+        
+        h2, .display-2 { 
+            font-size: var(--fs-h2);
+            letter-spacing: var(--ls-wider);
+        }
+        
+        h3, .display-3 { 
+            font-size: var(--fs-h3);
+            letter-spacing: var(--ls-wide);
+        }
+        
+        h4, .display-4 { 
+            font-size: var(--fs-h4);
+            font-weight: 600;
+        }
+        
+        h5, .display-5 { 
+            font-size: var(--fs-h5);
+            font-weight: 600;
+        }
+        
+        h6, .display-6 { 
+            font-size: var(--fs-body-lg);
+            font-weight: 600;
+        }
+        
+        /* Hero Typography */
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: var(--fs-hero);
+            font-weight: 400;
+            letter-spacing: var(--ls-ultra);
+            line-height: var(--lh-tight);
+            text-transform: uppercase;
+        }
+        
+        /* Lead Text */
+        .lead {
+            font-family: var(--font-heading);
+            font-size: var(--fs-body-lg);
+            font-weight: 500;
+            letter-spacing: var(--ls-widest);
+            line-height: var(--lh-relaxed);
+            text-transform: uppercase;
+        }
+        
+        /* Body Text Variations */
+        p {
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wide);
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: var(--lh-relaxed);
+        }
+        
+        .text-caps {
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wider);
+            font-weight: 600;
+        }
+        
+        .text-small-caps {
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wide);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* List items */
+        li {
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wide);
+            font-weight: 500;
+            font-size: var(--fs-body-sm);
+            line-height: var(--lh-relaxed);
+        }
+        
+        /* Navigation Typography */
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 2rem !important;
+            letter-spacing: var(--ls-widest) !important;
+            font-weight: 400 !important;
+        }
+        
+        .navbar-nav .nav-link {
+            font-family: var(--font-heading);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: var(--ls-widest);
+            text-transform: uppercase;
+            padding: 0.75rem 1.25rem !important;
+        }
+        
+        /* Button Typography */
+        .btn {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: var(--ls-widest);
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            padding: 1.125rem 2.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-lg {
+            font-size: 1.5rem;
+            letter-spacing: var(--ls-ultra);
+            padding: 1.375rem 3.5rem;
+            font-weight: 800;
+        }
+        
+        .btn:hover {
+            letter-spacing: var(--ls-ultra);
+            transform: translateY(-2px);
+        }
+        
+        /* Card Typography */
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: var(--fs-h5);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wide);
+            margin-bottom: 1rem;
+        }
+        
+        .card-text {
+            font-size: 0.875rem;
+            line-height: var(--lh-relaxed);
+            text-transform: uppercase;
+            letter-spacing: var(--ls-wide);
+            font-weight: 500;
+        }
+        
+        /* Badge Typography */
+        .badge {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: var(--ls-wider);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 0.375rem 0.75rem;
+        }
+        
+        /* Footer Typography */
+        footer h5 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: var(--ls-widest);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        footer p, footer a {
+            font-size: var(--fs-body-sm);
+            letter-spacing: var(--ls-normal);
+        }
+        
+        footer p.small {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        /* Special Text Effects */
+        .text-outline {
+            -webkit-text-stroke: 2px var(--accent-gold);
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Homepage specific styles */
+        body {
+            padding-top: 0;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background: transparent !important;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Mobile menu override for homepage */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(0, 0, 0, 0.98) !important;
+                margin-top: 1rem;
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+        }
+        
+        /* Full Screen Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .slide-content h1 {
+            animation: fadeInUp 1.5s ease-out;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slide-content p {
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+        }
+        
+        .slide-content .btn {
+            animation: fadeInUp 1.5s ease-out 1s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Slide indicators */
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.2);
+        }
+        
+        /* Scroll down indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 100;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Section Typography Enhancements */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-heading);
+            font-size: var(--fs-body);
+            font-weight: 600;
+            letter-spacing: var(--ls-ultra);
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Timeline Typography */
+        .timeline h4 {
+            font-family: var(--font-display);
+            letter-spacing: var(--ls-widest);
+        }
+        
+        /* Icon Enhancement */
+        .bi {
+            vertical-align: middle;
+        }
+        
+        /* List Typography */
+        ul.list-unstyled li {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: var(--ls-normal);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Icon + Text Lists */
+        ul.list-unstyled li .bi {
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            :root {
+                --fs-body: 1rem;
+                --fs-body-lg: 1.125rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.75rem !important;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                padding: 0.875rem 2rem;
+            }
+            
+            .btn-lg {
+                font-size: 1.25rem;
+                padding: 1.125rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">AIRIKAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses/index.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certifications/index.html">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">Media</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events/index.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog/index.html">Articles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Screen Slideshow -->
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('assets/images/2014/10/1080p_bird_of_prey.jpg');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white">
+                    <h1 class="hero-title">AIRIKAI</h1>
+                    <p class="lead">Sacred Warrior Training</p>
+                    <a href="courses/index.html" class="btn btn-light btn-lg">Begin Your Journey</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('assets/images/2014/10/michelle_kick_1080.jpg');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white">
+                    <h1 class="hero-title">Master Your Body</h1>
+                    <p class="lead">Ancient Martial Arts Meets Modern Movement</p>
+                    <a href="courses/warrior-training.html" class="btn btn-light btn-lg">Warrior Training</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('assets/images/2014/10/ninja_girl_1080.jpg');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white">
+                    <h1 class="hero-title">Awaken Your Spirit</h1>
+                    <p class="lead">Transform Through Sacred Practice</p>
+                    <a href="courses/awaken-the-om.html" class="btn btn-light btn-lg">Awaken the Om</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="slide" style="background-image: url('assets/images/2014/10/boxingr_1080_sepia.jpg');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white">
+                    <h1 class="hero-title">Join Our Community</h1>
+                    <p class="lead">Train With Masters, Become a Master</p>
+                    <a href="certifications/index.html" class="btn btn-light btn-lg">Get Certified</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+            <span class="indicator" onclick="currentSlide(4)"></span>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator text-white">
+            <i class="bi bi-chevron-down fs-2"></i>
+        </div>
+    </div>
+
+    <!-- Philosophy Section -->
+    <section class="py-5" style="background: #0d0d0d;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="section-subtitle">Our Philosophy</p>
+                    <h2 class="mb-4">The Airikai Method</h2>
+                    <p class="lead mb-4">Airikai is more than a training system—it's a philosophy of life.</p>
+                    <p>We blend ancient warrior traditions with modern movement science, creating a path of transformation that awakens your body, mind, and spirit.</p>
+                    <p>Through our unique fusion of martial arts, yoga, pilates, and sacred practices, you'll discover strength you never knew you had and peace you've always sought.</p>
+                    <a href="courses/awaken-the-om.html" class="btn btn-primary mt-3">Learn Our Philosophy</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/2014/10/airikai_method_3d_book.png" class="img-fluid" alt="The Airikai Method">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="bg-light">
+        <div class="container">
+            <p class="section-subtitle text-center">Transform Your Life</p>
+            <h2 class="text-center mb-5">Training Programs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow border-0" style="overflow: hidden;">
+                        <div style="height: 300px; overflow: hidden;">
+                            <img src="assets/images/2014/10/IMG_3592.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Movement Training">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Artistic Movement</h4>
+                            <p class="card-text">Flow like water, strike like lightning. Our movement training integrates dance, martial arts, and yoga into a seamless practice of body awareness.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Flexibility & Strength</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Balance & Coordination</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Mind-Body Connection</li>
+                            </ul>
+                            <a href="courses/artistic-movement.html" class="btn btn-primary">Start Training</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 shadow border-0" style="overflow: hidden;">
+                        <div style="height: 300px; overflow: hidden;">
+                            <img src="assets/images/2014/10/Featured.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Tantric Tango">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Tantric Tango</h4>
+                            <p class="card-text">Experience the sacred dance of connection. Tantric Tango merges the passion of Argentine tango with mindful presence and spiritual awareness.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Partner Connection</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Sacred Movement</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Emotional Expression</li>
+                            </ul>
+                            <a href="courses/tantric-tango.html" class="btn btn-primary">Explore Tango</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 shadow border-0" style="overflow: hidden;">
+                        <div style="height: 300px; overflow: hidden;">
+                            <img src="assets/images/2014/10/highkick.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Creative Design">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Creative Design</h4>
+                            <p class="card-text">Channel your warrior spirit into creative expression. Learn to design your life with the same precision and beauty as your movement practice.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Visual Arts</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Digital Creation</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Life Design</li>
+                            </ul>
+                            <a href="courses/creative-design.html" class="btn btn-primary">Create Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Path -->
+    <section style="background: url('assets/images/home-bg.png') repeat, #000;">
+        <div class="container">
+            <p class="section-subtitle text-center">Begin Your Journey</p>
+            <h2 class="text-center mb-5">Your Path to Mastery</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <div class="row g-4">
+                            <div class="col-md-4 text-center">
+                                <div class="p-4">
+                                    <i class="bi bi-person-badge fs-1 text-warning"></i>
+                                    <h4 class="mt-3">Trainer</h4>
+                                    <p>Begin your journey with 200 hours of foundational training</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-4">
+                                    <i class="bi bi-award fs-1 text-warning"></i>
+                                    <h4 class="mt-3">Master</h4>
+                                    <p>Deepen your practice and become a guide for others</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-4">
+                                    <i class="bi bi-star fs-1 text-warning"></i>
+                                    <h4 class="mt-3">Sensei</h4>
+                                    <p>Achieve complete mastery and teach all aspects of Airikai</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="certifications/index.html" class="btn btn-light btn-lg">View Certification Programs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Preview -->
+    <section class="bg-light">
+        <div class="container">
+            <p class="section-subtitle text-center">Learn From Masters</p>
+            <h2 class="text-center mb-5">Training Videos</h2>
+            <div class="row g-4">
+                <div class="col-lg-8 mx-auto">
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe src="https://www.youtube-nocookie.com/embed/5VRj06ScOMk" title="Beautiful Warrior Yoga" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-center">Beautiful Warrior Yoga</h4>
+                    <p class="text-center">30-minute sequence developing into Warrior I with instructor Marley Crouch</p>
+                    <div class="text-center mt-4">
+                        <a href="media.html" class="btn btn-primary btn-lg">View Full Media Library</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/2014/10/background_web.jpg') center/cover;">
+        <div class="container">
+            <h2 class="hero-title mb-4">Ready to Transform?</h2>
+            <p class="lead mb-5">Join thousands of warriors who have discovered their true power through Airikai</p>
+            <div class="row g-3 justify-content-center">
+                <div class="col-auto">
+                    <a href="courses/index.html" class="btn btn-light btn-lg">Start Training</a>
+                </div>
+                <div class="col-auto">
+                    <a href="events/index.html" class="btn btn-outline-light btn-lg">Join a Retreat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Airikai</h5>
+                    <p class="text-caps mb-2">Sacred Warrior Training</p>
+                    <p class="small">Transform your body, awaken your spirit, master your life.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="courses/index.html" class="text-white-50">Courses</a></li>
+                        <li><a href="certifications/index.html" class="text-white-50">Certifications</a></li>
+                        <li><a href="events/index.html" class="text-white-50">Events & Retreats</a></li>
+                        <li><a href="media.html" class="text-white-50">Video Library</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5>Connect</h5>
+                    <div class="social-links mb-3">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-youtube fs-5"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-twitter fs-5"></i></a>
+                    </div>
+                    <p class="small mb-0 text-caps">&copy; 2025 Airikai. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Slideshow functionality
+        let slideIndex = 1;
+        let slideInterval;
+        
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            let indicators = document.getElementsByClassName("indicator");
+            
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (let i = 0; i < indicators.length; i++) {
+                indicators[i].classList.remove("active");
+            }
+            
+            slides[slideIndex - 1].classList.add("active");
+            indicators[slideIndex - 1].classList.add("active");
+        }
+        
+        function nextSlide() {
+            showSlide(slideIndex += 1);
+        }
+        
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            showSlide(slideIndex = n);
+            startSlideshow();
+        }
+        
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        
+        // Start slideshow
+        startSlideshow();
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+/* Airikai - Sacred Warrior Training Custom Styles */
+/* Based on DT-Slash Dark Theme */
+
+:root {
+    --bg-dark: #000;
+    --bg-secondary: #0d0d0d;
+    --bg-tertiary: #0f0f0f;
+    --border-color: #212121;
+    --text-primary: #ededed;
+    --text-secondary: #9a9a9a;  /* Increased contrast for WCAG AA */
+    --text-muted: #7a7a7a;      /* Increased contrast */
+    --link-color: #f5f2eb;
+    --header-color: #181818;
+    --accent-gold: #C4B5A0;     /* Lighter gold for better contrast */
+    --accent-gold-dark: #8E857C; /* Original gold for borders */
+}
+
+/* General Styles */
+body {
+    font: normal 12px/20px 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    text-shadow: 1px 1px 0 #000;
+    padding-top: 76px; /* Account for fixed navbar */
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--header-color);
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-gold);
+    text-decoration: none !important;
+}
+
+/* Navigation */
+.navbar {
+    background: url('../images/top_bg.png') repeat-x 0 0 !important;
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: none;
+    padding: 0.5rem 0;
+    min-height: 60px;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+    color: var(--text-primary) !important;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.navbar-nav .nav-link {
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary) !important;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-gold) !important;
+    text-decoration: none !important;
+    background: rgba(142, 133, 124, 0.1);
+    border-radius: 4px;
+}
+
+/* Mobile menu styles */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        background: rgba(142, 133, 124, 0.2);
+        transform: translateX(5px);
+    }
+}
+
+/* Hamburger menu customization */
+.navbar-toggler {
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    border-color: var(--accent-gold);
+    background: rgba(142, 133, 124, 0.1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(142, 133, 124, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28237, 237, 237, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../images/home-bg.png') repeat 0 0, 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(13, 17, 23, 0.9));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 3px;
+}
+
+.hero-section .lead {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: #222;
+}
+
+.card-body {
+    background: transparent;
+}
+
+.card-title {
+    color: var(--text-primary);
+}
+
+.card-text {
+    color: var(--text-secondary);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #1a1a1a;
+    border: 2px solid #2a2a2a;
+    color: var(--text-primary);
+    font-weight: normal;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.btn-primary:hover {
+    background: #2a2a2a;
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Focus state for accessibility */
+.btn-primary:focus {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+.btn-light {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.btn-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(196, 181, 160, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-light:hover {
+    background: rgba(196, 181, 160, 0.25);
+    color: #ffffff;
+    border-color: #ffffff;
+    font-weight: 600;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(196, 181, 160, 0.4);
+}
+
+.btn-light:hover::before {
+    width: 100%;
+}
+
+/* Focus state for accessibility */
+.btn-light:focus {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Ensure minimum tap target size for mobile (48x48px) */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* Sections */
+section {
+    position: relative;
+}
+
+.bg-light {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary);
+}
+
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Footer */
+footer {
+    background: url('../images/bottom_bg.png') repeat-x 0 0 !important;
+    background-color: var(--bg-dark) !important;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-links a {
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+    color: var(--text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--link-color) !important;
+}
+
+/* Course Pages */
+.course-header {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 4rem 0;
+}
+
+.course-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Blog Styles */
+.blog-post {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Article Box Style */
+.article-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: -1px -1px 0 #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: var(--sacred-gold);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Masonry Grid for Portfolio/Blog */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
+.masonry-item {
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+/* Dark Theme Enhancements */
+input, select, textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    background: #222;
+    border-color: var(--accent-gold);
+    outline: none;
+}
+
+.badge {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.badge.bg-primary {
+    background: var(--bg-tertiary) !important;
+    color: var(--accent-gold) !important;
+    border: 1px solid var(--border-color);
+}
+
+.badge.bg-success {
+    background: #1a1a1a !important;
+    color: #7a7a7a !important;
+    border: 1px solid #2a2a2a;
+}
+
+.badge.bg-danger {
+    background: #0a0a0a !important;
+    color: #8a6666 !important;
+    border: 1px solid #2a1a1a;
+}
+
+.badge.bg-warning {
+    background: var(--bg-dark) !important;
+    color: var(--accent-gold) !important;
+    border: 1px solid var(--accent-gold);
+}
+
+/* Video embeds */
+.ratio {
+    background: var(--bg-dark);
+}
+
+/* Blockquotes */
+blockquote {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+}
+
+blockquote .blockquote-footer {
+    color: var(--text-muted);
+}
+
+/* Fix Bootstrap overrides */
+.text-white {
+    color: var(--text-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bg-tertiary) !important;
+}
+
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Card headers */
+.card-header {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Override Bootstrap color utilities for dark theme */
+.bg-warning {
+    background-color: var(--bg-tertiary) !important;
+}
+
+.bg-danger {
+    background-color: var(--bg-secondary) !important;
+}
+
+.text-warning {
+    color: var(--accent-gold) !important;
+}
+
+.text-dark {
+    color: var(--text-primary) !important;
+}
+
+/* Kill all Bootstrap blues */
+.text-primary {
+    color: var(--text-primary) !important;
+}
+
+.link-primary {
+    color: var(--text-primary) !important;
+}
+
+.link-primary:hover {
+    color: var(--accent-gold) !important;
+}
+
+a {
+    color: var(--text-primary) !important;
+}
+
+a:hover {
+    color: var(--accent-gold) !important;
+}
+
+.breadcrumb-item a {
+    color: var(--text-secondary) !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--accent-gold) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-primary) !important;
+}
+
+/* Fix header colors on dark backgrounds */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+.slide-content h1,
+.slide-content h2,
+.slide-content h3,
+.slide-content h4,
+.slide-content h5,
+.slide-content h6 {
+    color: #ffffff !important;
+}
+
+/* Accordion styling for dark theme */
+.accordion-item {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.accordion-button {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--border-color);
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* Nav pills for media page */
+.nav-pills .nav-link {
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    margin: 0 0.25rem;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    border-color: var(--accent-gold);
+}
+
+/* Bootstrap button overrides - NO BLUE */
+/* Primary button is defined above - this ensures Bootstrap overrides work */
+.btn-primary:focus,
+.btn-primary:active {
+    background: #2a2a2a !important;
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(142, 133, 124, 0.25) !important;
+}
+
+.btn-primary.active {
+    background: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: var(--bg-dark) !important;
+}
+
+/* Form controls - NO BLUE */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(142, 133, 124, 0.25) !important;
+}
+
+/* Checkbox and radio - NO BLUE */
+.form-check-input:checked {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+.form-check-input:focus {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(142, 133, 124, 0.25) !important;
+}
+
+/* Ensure display classes use light text */
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    color: var(--text-primary) !important;
+}
+
+/* GLOBAL: Remove ALL underlines */
+* {
+    text-decoration: none !important;
+}
+
+a:hover,
+a:focus,
+a:active,
+.nav-link:hover,
+.nav-link:focus,
+.dropdown-item:hover,
+.dropdown-item:focus {
+    text-decoration: none !important;
+}
+
+/* Enhanced button hovers */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+/* Remove the generic ripple for btn-light as it conflicts */
+.btn:not(.btn-light)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(142, 133, 124, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:not(.btn-light):hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    text-decoration: none !important;
+}
+
+/* Ensure btn-light ALWAYS has readable text and dramatic hover */
+.btn-light,
+a.btn-light {
+    color: var(--accent-gold) !important;
+    text-shadow: 0 0 20px rgba(196, 181, 160, 0.5);
+}
+
+.btn-light:hover,
+a.btn-light:hover {
+    color: #ffffff !important;
+    background: rgba(196, 181, 160, 0.25) !important;
+    border-color: #ffffff !important;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+}
+
+.btn-light:focus,
+a.btn-light:focus,
+.btn-light:active,
+a.btn-light:active {
+    color: #ffffff !important;
+    background: rgba(196, 181, 160, 0.3) !important;
+    border-color: #ffffff !important;
+}
+
+/* Large button enhancement */
+.btn-light.btn-lg {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.btn-light.btn-lg:hover {
+    letter-spacing: 2px;
+}
+
+/* Hero and overlay button fixes - elegant hover like bottom CTA */
+.slide-overlay .btn-light,
+.hero-section .btn-light,
+.slide-content .btn-light,
+.slideshow-container .btn-light,
+div[class*="slide"] .btn-light {
+    background: transparent !important;
+    border: 2px solid var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    transition: all 0.3s ease !important;
+    text-shadow: 0 0 10px rgba(196, 181, 160, 0.5);
+}
+
+.slide-overlay .btn-light::before,
+.hero-section .btn-light::before,
+.slide-content .btn-light::before,
+.slideshow-container .btn-light::before,
+div[class*="slide"] .btn-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(196, 181, 160, 0.1);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.slide-overlay .btn-light:hover,
+.hero-section .btn-light:hover,
+.slide-content .btn-light:hover,
+.slideshow-container .btn-light:hover,
+div[class*="slide"] .btn-light:hover,
+.slide-overlay a.btn-light:hover,
+.slide-content a.btn-light:hover,
+.slideshow-container a.btn-light:hover {
+    background: transparent !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 30px rgba(196, 181, 160, 0.3) !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8) !important;
+}
+
+.slide-overlay .btn-light:hover::before,
+.hero-section .btn-light:hover::before,
+.slide-content .btn-light:hover::before,
+.slideshow-container .btn-light:hover::before,
+div[class*="slide"] .btn-light:hover::before {
+    width: 100%;
+}
+
+/* Card link hovers */
+.card a {
+    text-decoration: none !important;
+}
+
+.card a:hover {
+    text-decoration: none !important;
+}
+
+/* Clickable course cards */
+.course-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    border-color: var(--accent-gold);
+}
+
+.course-card .card-title,
+.course-card .card-text {
+    color: var(--text-primary);
+}
+
+.course-card:hover .btn {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: #000;
+}
+
+/* Remove pointer events from button so parent link handles click */
+.course-card .btn {
+    pointer-events: none;
+}
+
+/* KILL ALL BOOTSTRAP BLUES AND DEFAULT COLORS */
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-dark {
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-dark:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.btn-outline-light {
+    color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-light:hover {
+    background: rgba(196, 181, 160, 0.15) !important;
+    border-color: var(--accent-gold) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 20px rgba(196, 181, 160, 0.3) !important;
+}
+
+.btn-secondary,
+.btn-info,
+.btn-success,
+.btn-warning,
+.btn-danger,
+.btn-dark {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-secondary:hover,
+.btn-info:hover,
+.btn-success:hover,
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-dark:hover {
+    background: #2a2a2a !important;
+    border-color: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Links */
+.link-secondary,
+.link-info,
+.link-success,
+.link-danger,
+.link-warning {
+    color: var(--text-secondary) !important;
+}
+
+.link-secondary:hover,
+.link-info:hover,
+.link-success:hover,
+.link-danger:hover,
+.link-warning:hover {
+    color: var(--accent-gold) !important;
+}
+
+/* Alerts */
+.alert-primary,
+.alert-info {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* List groups */
+.list-group-item {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.list-group-item:hover {
+    background: var(--bg-tertiary) !important;
+}
+
+/* Progress bars */
+.progress {
+    background: var(--bg-dark) !important;
+}
+
+.progress-bar {
+    background: var(--accent-gold) !important;
+}
+
+/* Spinners */
+.spinner-border,
+.spinner-grow {
+    color: var(--accent-gold) !important;
+}
+
+/* Tables */
+.table {
+    color: var(--text-primary) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background: var(--bg-secondary) !important;
+}
+
+/* Modal */
+.modal-content {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--border-color) !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dropdown-item {
+    color: var(--text-primary) !important;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-tertiary) !important;
+    color: var(--accent-gold) !important;
+}

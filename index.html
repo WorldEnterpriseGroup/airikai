@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airikai - Sacred Warrior Training</title>
     
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" as="image" href="assets/images/2014/10/1080p_bird_of_prey.webp" fetchpriority="high">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -191,7 +193,7 @@
     <!-- Full Screen Slideshow -->
     <div class="slideshow-container">
         <!-- Slide 1 -->
-        <div class="slide active" style="background-image: url('assets/images/2014/10/1080p_bird_of_prey.jpg');">
+        <div class="slide active" style="background-image: url('assets/images/2014/10/1080p_bird_of_prey.webp');">
             <div class="slide-overlay">
                 <div class="slide-content text-white">
                     <h1>AIRIKAI</h1>
@@ -202,7 +204,7 @@
         </div>
         
         <!-- Slide 2 -->
-        <div class="slide" style="background-image: url('assets/images/2014/10/michelle_kick_1080.jpg');">
+        <div class="slide" style="background-image: url('assets/images/2014/10/michelle_kick_1080.webp');">
             <div class="slide-overlay">
                 <div class="slide-content text-white">
                     <h1>Master Your Body</h1>
@@ -213,7 +215,7 @@
         </div>
         
         <!-- Slide 3 -->
-        <div class="slide" style="background-image: url('assets/images/2014/10/ninja_girl_1080.jpg');">
+        <div class="slide" style="background-image: url('assets/images/2014/10/ninja_girl_1080.webp');">
             <div class="slide-overlay">
                 <div class="slide-content text-white">
                     <h1>Awaken Your Spirit</h1>
@@ -224,7 +226,7 @@
         </div>
         
         <!-- Slide 4 -->
-        <div class="slide" style="background-image: url('assets/images/2014/10/boxingr_1080_sepia.jpg');">
+        <div class="slide" style="background-image: url('assets/images/2014/10/boxingr_1080_sepia.webp');">
             <div class="slide-overlay">
                 <div class="slide-content text-white">
                     <h1>Join Our Community</h1>
@@ -259,7 +261,7 @@
                     <a href="courses/awaken-the-om.html" class="btn btn-primary mt-3">Learn Our Philosophy</a>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/images/2014/10/airikai_method_3d_book.png" class="img-fluid" alt="The Airikai Method">
+                    <img src="assets/images/2014/10/airikai_method_3d_book.webp" class="img-fluid" alt="The Airikai Method" width="860" height="996" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -273,7 +275,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow border-0" style="overflow: hidden;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="assets/images/2014/10/IMG_3592.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Movement Training">
+                            <img src="assets/images/2014/10/IMG_3592.webp" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Movement Training" loading="lazy" decoding="async">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Artistic Movement</h4>
@@ -291,7 +293,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow border-0" style="overflow: hidden;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="assets/images/2014/10/Featured.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Tantric Tango">
+                            <img src="assets/images/2014/10/Featured.webp" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Tantric Tango" loading="lazy" decoding="async">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Tantric Tango</h4>
@@ -309,7 +311,7 @@
                 <div class="col-md-4">
                     <div class="card h-100 shadow border-0" style="overflow: hidden;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="assets/images/2014/10/highkick.jpg" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Creative Design">
+                            <img src="assets/images/2014/10/highkick.webp" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="Creative Design" loading="lazy" decoding="async">
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Creative Design</h4>
@@ -373,7 +375,8 @@
             <div class="row g-4">
                 <div class="col-lg-8 mx-auto">
                     <div class="ratio ratio-16x9 mb-4">
-                        <iframe src="https://www.youtube-nocookie.com/embed/5VRj06ScOMk" title="Beautiful Warrior Yoga" allowfullscreen></iframe>
+                        <iframe data-src="https://www.youtube-nocookie.com/embed/5VRj06ScOMk" title="Beautiful Warrior Yoga" allowfullscreen></iframe>
+                        <noscript><iframe src="https://www.youtube-nocookie.com/embed/5VRj06ScOMk" title="Beautiful Warrior Yoga" allowfullscreen></iframe></noscript>
                     </div>
                     <h4 class="text-center">Beautiful Warrior Yoga</h4>
                     <p class="text-center">30-minute sequence developing into Warrior I with instructor Marley Crouch</p>
@@ -434,9 +437,9 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/custom.js"></script>
+    <script defer src="assets/js/custom.js"></script>
     <script>
         // Slideshow functionality
         let slideIndex = 1;
@@ -488,6 +491,20 @@
             }
         });
         
+        // Load the YouTube player when it is about to scroll into view
+        (function() {
+            const player = document.querySelector('iframe[data-src]');
+            if (!player) return;
+            const load = function() { player.src = player.getAttribute('data-src'); };
+            if (!('IntersectionObserver' in window)) { load(); return; }
+            new IntersectionObserver(function(entries, observer) {
+                if (entries.some(function(e) { return e.isIntersecting; })) {
+                    load();
+                    observer.disconnect();
+                }
+            }, { rootMargin: '800px 0px' }).observe(player);
+        })();
+
         // Smooth scroll for anchor links
         document.addEventListener('DOMContentLoaded', function() {
             const scrollIndicator = document.querySelector('.scroll-indicator');
